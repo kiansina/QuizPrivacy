@@ -152,7 +152,7 @@ choices = {
 "18": [("Sanzioni amministrative pecuniarie fino a 20.000.000 di euro, o per le imprese, fino al 4 % del fatturato mondiale totale annuo dell'esercizio precedente","T"),
        ("Da 50.000 a 50.000.000 euro a seconda del tipo di violazione","F"),
        ("Sanzioni amministrative pecuniarie fino a 10.000.000 di euro, o per le imprese, fino al 2 % del fatturato mondiale totale annuo dell'esercizio precedente","F")],
-"19": [("Entrambe le precedenti risposte","T"),
+"19": [("Entrambe l'altre risposte","T"),
        ("In una violazione di sicurezza che comporta - accidentalmente o in modo illecito - la distruzione, la perdita, la modifica, la divulgazione non autorizzata o l’accesso ai dati personali trasmessi, conservati o comunque trattati","F"),
        ("In una divulgazione di dati riservati o confidenziali all’interno di un ambiente privo di misure di sicurezza (ad esempio, sul web) in maniera involontaria o volontaria. Tale divulgazione può avvenire in seguito a: perdita accidentale, furto, accesso abusivo","F")],
 "20": [("Solo da persone fisiche autorizzate che operano seguendo le istruzioni impartite dal Titolare o del Responsabile del Trattamento","T"),
@@ -288,6 +288,10 @@ def check_password():
         # Password correct.
         return True , st.session_state["username"]
 
+
+A=[1,3,8,11,12,13,14,15,17,23,24,26,30,31,32,34,35]
+B=[2,4,6,9,10,20,21,22,27,28,29,36]
+C=[5,7,18,19,25,37,16,33]
 #if "t0" not in st.session_state:
 #    st.session_state["t0"] = time.time()
 if "st" not in st.session_state:
@@ -295,7 +299,7 @@ if "st" not in st.session_state:
 if "usercheck" not in st.session_state:
     st.session_state['usercheck']=False
 if "rn" not in st.session_state:
-    st.session_state["rn"] = random.sample(range(1, 38), 10)
+    st.session_state["rn"] = random.sample(A, 4)+random.sample(B, 3)+random.sample(C, 3)
 if "submit" not in st.session_state:
     st.session_state["submit"] = False
 if "start" not in st.session_state:
@@ -341,11 +345,6 @@ if check_password():
     if st.session_state['n']==-2:
         st.session_state['n']=-1
 
-def LiSo():
-    sql = """update qst set livello_sodisfazione = '{}'""".format(LS)
-    cursor = conn.cursor()
-    cursor.execute(sql)
-    st.session_state['n']+=1
 
 
 def nnum():
@@ -544,12 +543,12 @@ if st.session_state['n']==-1:
             "https://media-exp1.licdn.com/dms/image/C560BAQE17_4itIWOLw/company-logo_200_200/0/1570546904891?e=2147483647&v=beta&t=w-App-ZgjSHDlEDDFQeNB7XU2L7QgY2EF-vFj2Il8q8",
             width=50,
         )
-        st.title("Timesheet 📅")
+        st.markdown(f"## 🔒 :red[Privacy] :blue[Course **Questionnaire**.] 📚💻")
         st.write(st.session_state["dfs"])
         st.image("pic2.png",width=400)
         with var_c:
-            st.title('Benvenuto al Bordo Gentile {} 🚀'.format(st.session_state["username"]))
-            st.title('Controlla lo stato della sua esame per favore')
+            st.markdown(f"##### Benvenuto al Bordo Gentile :violet[**{st.session_state['username']}**] 🚀")#.format(st.session_state["username"]))
+            st.markdown(f"##### Controlla lo stato della sua esame per favore")
             if st.button("check"):
                 if st.session_state["username"] in df['Username'].to_list():
                     st.session_state['usercheck']=False
@@ -582,7 +581,7 @@ if st.session_state['usercheck']==True:
                     "https://media-exp1.licdn.com/dms/image/C560BAQE17_4itIWOLw/company-logo_200_200/0/1570546904891?e=2147483647&v=beta&t=w-App-ZgjSHDlEDDFQeNB7XU2L7QgY2EF-vFj2Il8q8",
                     width=50,
                 )
-                st.title("Timesheet 📅")
+                st.markdown(f"## 🔒 :red[Privacy] :blue[Course **Questionnaire**.] 📚💻")
                 st.write(st.session_state["dfs"])
                 st.image("pic2.png",width=400)
                 st.session_state['Nome'] = st.text_input("Nome:")
@@ -600,7 +599,7 @@ if st.session_state['usercheck']==True:
                     "https://media-exp1.licdn.com/dms/image/C560BAQE17_4itIWOLw/company-logo_200_200/0/1570546904891?e=2147483647&v=beta&t=w-App-ZgjSHDlEDDFQeNB7XU2L7QgY2EF-vFj2Il8q8",
                     width=50,
                 )
-                st.title("Timesheet 📅")
+                st.markdown(f"## 🔒 :red[Privacy] :blue[Course **Questionnaire**.] 📚💻")
                 st.write(st.session_state["dfs"])
                 st.image("pic2.png",width=400)
                 form = st.form('Question')
@@ -626,7 +625,7 @@ if st.session_state['usercheck']==True:
                     "https://media-exp1.licdn.com/dms/image/C560BAQE17_4itIWOLw/company-logo_200_200/0/1570546904891?e=2147483647&v=beta&t=w-App-ZgjSHDlEDDFQeNB7XU2L7QgY2EF-vFj2Il8q8",
                     width=50,
                 )
-                st.title("Timesheet 📅")
+                st.markdown(f"## 🔒 :red[Privacy] :blue[Course **Questionnaire**.] 📚💻")
                 st.write(st.session_state["dfs"])
                 st.image("pic2.png",width=400)
                 if st.session_state['Q_n_emty']==1:
@@ -646,7 +645,7 @@ if st.session_state['usercheck']==True:
                     "https://media-exp1.licdn.com/dms/image/C560BAQE17_4itIWOLw/company-logo_200_200/0/1570546904891?e=2147483647&v=beta&t=w-App-ZgjSHDlEDDFQeNB7XU2L7QgY2EF-vFj2Il8q8",
                     width=50,
                 )
-                st.title("Timesheet 📅")
+                st.markdown(f"## 🔒 :red[Privacy] :blue[Course **Questionnaire**.] 📚💻")
                 st.write(st.session_state["dfs"])
                 st.image("pic2.png",width=400)
                 form = st.form('Question')
@@ -673,7 +672,7 @@ if st.session_state['usercheck']==True:
                     "https://media-exp1.licdn.com/dms/image/C560BAQE17_4itIWOLw/company-logo_200_200/0/1570546904891?e=2147483647&v=beta&t=w-App-ZgjSHDlEDDFQeNB7XU2L7QgY2EF-vFj2Il8q8",
                     width=50,
                 )
-                st.title("Timesheet 📅")
+                st.markdown(f"## 🔒 :red[Privacy] :blue[Course **Questionnaire**.] 📚💻")
                 st.write(st.session_state["dfs"])
                 st.image("pic2.png",width=400)
                 if st.session_state['Q_n_emty']==1:
@@ -692,7 +691,7 @@ if st.session_state['usercheck']==True:
                     "https://media-exp1.licdn.com/dms/image/C560BAQE17_4itIWOLw/company-logo_200_200/0/1570546904891?e=2147483647&v=beta&t=w-App-ZgjSHDlEDDFQeNB7XU2L7QgY2EF-vFj2Il8q8",
                     width=50,
                 )
-                st.title("Timesheet 📅")
+                st.markdown(f"## 🔒 :red[Privacy] :blue[Course **Questionnaire**.] 📚💻")
                 st.write(st.session_state["dfs"])
                 st.image("pic2.png",width=400)
                 form = st.form('Question')
@@ -718,7 +717,7 @@ if st.session_state['usercheck']==True:
                     "https://media-exp1.licdn.com/dms/image/C560BAQE17_4itIWOLw/company-logo_200_200/0/1570546904891?e=2147483647&v=beta&t=w-App-ZgjSHDlEDDFQeNB7XU2L7QgY2EF-vFj2Il8q8",
                     width=50,
                 )
-                st.title("Timesheet 📅")
+                st.markdown(f"## 🔒 :red[Privacy] :blue[Course **Questionnaire**.] 📚💻")
                 st.write(st.session_state["dfs"])
                 st.image("pic2.png",width=400)
                 if st.session_state['Q_n_emty']==1:
@@ -737,7 +736,7 @@ if st.session_state['usercheck']==True:
                     "https://media-exp1.licdn.com/dms/image/C560BAQE17_4itIWOLw/company-logo_200_200/0/1570546904891?e=2147483647&v=beta&t=w-App-ZgjSHDlEDDFQeNB7XU2L7QgY2EF-vFj2Il8q8",
                     width=50,
                 )
-                st.title("Timesheet 📅")
+                st.markdown(f"## 🔒 :red[Privacy] :blue[Course **Questionnaire**.] 📚💻")
                 st.write(st.session_state["dfs"])
                 st.image("pic2.png",width=400)
                 form = st.form('Question')
@@ -763,7 +762,7 @@ if st.session_state['usercheck']==True:
                     "https://media-exp1.licdn.com/dms/image/C560BAQE17_4itIWOLw/company-logo_200_200/0/1570546904891?e=2147483647&v=beta&t=w-App-ZgjSHDlEDDFQeNB7XU2L7QgY2EF-vFj2Il8q8",
                     width=50,
                 )
-                st.title("Timesheet 📅")
+                st.markdown(f"## 🔒 :red[Privacy] :blue[Course **Questionnaire**.] 📚💻")
                 st.write(st.session_state["dfs"])
                 st.image("pic2.png",width=400)
                 if st.session_state['Q_n_emty']==1:
@@ -782,7 +781,7 @@ if st.session_state['usercheck']==True:
                     "https://media-exp1.licdn.com/dms/image/C560BAQE17_4itIWOLw/company-logo_200_200/0/1570546904891?e=2147483647&v=beta&t=w-App-ZgjSHDlEDDFQeNB7XU2L7QgY2EF-vFj2Il8q8",
                     width=50,
                 )
-                st.title("Timesheet 📅")
+                st.markdown(f"## 🔒 :red[Privacy] :blue[Course **Questionnaire**.] 📚💻")
                 st.write(st.session_state["dfs"])
                 st.image("pic2.png",width=400)
                 form = st.form('Question')
@@ -808,7 +807,7 @@ if st.session_state['usercheck']==True:
                     "https://media-exp1.licdn.com/dms/image/C560BAQE17_4itIWOLw/company-logo_200_200/0/1570546904891?e=2147483647&v=beta&t=w-App-ZgjSHDlEDDFQeNB7XU2L7QgY2EF-vFj2Il8q8",
                     width=50,
                 )
-                st.title("Timesheet 📅")
+                st.markdown(f"## 🔒 :red[Privacy] :blue[Course **Questionnaire**.] 📚💻")
                 st.write(st.session_state["dfs"])
                 st.image("pic2.png",width=400)
                 if st.session_state['Q_n_emty']==1:
@@ -827,7 +826,7 @@ if st.session_state['usercheck']==True:
                     "https://media-exp1.licdn.com/dms/image/C560BAQE17_4itIWOLw/company-logo_200_200/0/1570546904891?e=2147483647&v=beta&t=w-App-ZgjSHDlEDDFQeNB7XU2L7QgY2EF-vFj2Il8q8",
                     width=50,
                 )
-                st.title("Timesheet 📅")
+                st.markdown(f"## 🔒 :red[Privacy] :blue[Course **Questionnaire**.] 📚💻")
                 st.write(st.session_state["dfs"])
                 st.image("pic2.png",width=400)
                 form = st.form('Question')
@@ -853,7 +852,7 @@ if st.session_state['usercheck']==True:
                     "https://media-exp1.licdn.com/dms/image/C560BAQE17_4itIWOLw/company-logo_200_200/0/1570546904891?e=2147483647&v=beta&t=w-App-ZgjSHDlEDDFQeNB7XU2L7QgY2EF-vFj2Il8q8",
                     width=50,
                 )
-                st.title("Timesheet 📅")
+                st.markdown(f"## 🔒 :red[Privacy] :blue[Course **Questionnaire**.] 📚💻")
                 st.write(st.session_state["dfs"])
                 st.image("pic2.png",width=400)
                 if st.session_state['Q_n_emty']==1:
@@ -872,7 +871,7 @@ if st.session_state['usercheck']==True:
                     "https://media-exp1.licdn.com/dms/image/C560BAQE17_4itIWOLw/company-logo_200_200/0/1570546904891?e=2147483647&v=beta&t=w-App-ZgjSHDlEDDFQeNB7XU2L7QgY2EF-vFj2Il8q8",
                     width=50,
                 )
-                st.title("Timesheet 📅")
+                st.markdown(f"## 🔒 :red[Privacy] :blue[Course **Questionnaire**.] 📚💻")
                 st.write(st.session_state["dfs"])
                 st.image("pic2.png",width=400)
                 form = st.form('Question')
@@ -898,7 +897,7 @@ if st.session_state['usercheck']==True:
                     "https://media-exp1.licdn.com/dms/image/C560BAQE17_4itIWOLw/company-logo_200_200/0/1570546904891?e=2147483647&v=beta&t=w-App-ZgjSHDlEDDFQeNB7XU2L7QgY2EF-vFj2Il8q8",
                     width=50,
                 )
-                st.title("Timesheet 📅")
+                st.markdown(f"## 🔒 :red[Privacy] :blue[Course **Questionnaire**.] 📚💻")
                 st.write(st.session_state["dfs"])
                 st.image("pic2.png",width=400)
                 if st.session_state['Q_n_emty']==1:
@@ -917,7 +916,7 @@ if st.session_state['usercheck']==True:
                     "https://media-exp1.licdn.com/dms/image/C560BAQE17_4itIWOLw/company-logo_200_200/0/1570546904891?e=2147483647&v=beta&t=w-App-ZgjSHDlEDDFQeNB7XU2L7QgY2EF-vFj2Il8q8",
                     width=50,
                 )
-                st.title("Timesheet 📅")
+                st.markdown(f"## 🔒 :red[Privacy] :blue[Course **Questionnaire**.] 📚💻")
                 st.write(st.session_state["dfs"])
                 st.image("pic2.png",width=400)
                 form = st.form('Question')
@@ -943,7 +942,7 @@ if st.session_state['usercheck']==True:
                     "https://media-exp1.licdn.com/dms/image/C560BAQE17_4itIWOLw/company-logo_200_200/0/1570546904891?e=2147483647&v=beta&t=w-App-ZgjSHDlEDDFQeNB7XU2L7QgY2EF-vFj2Il8q8",
                     width=50,
                 )
-                st.title("Timesheet 📅")
+                st.markdown(f"## 🔒 :red[Privacy] :blue[Course **Questionnaire**.] 📚💻")
                 st.write(st.session_state["dfs"])
                 st.image("pic2.png",width=400)
                 if st.session_state['Q_n_emty']==1:
@@ -962,7 +961,7 @@ if st.session_state['usercheck']==True:
                     "https://media-exp1.licdn.com/dms/image/C560BAQE17_4itIWOLw/company-logo_200_200/0/1570546904891?e=2147483647&v=beta&t=w-App-ZgjSHDlEDDFQeNB7XU2L7QgY2EF-vFj2Il8q8",
                     width=50,
                 )
-                st.title("Timesheet 📅")
+                st.markdown(f"## 🔒 :red[Privacy] :blue[Course **Questionnaire**.] 📚💻")
                 st.write(st.session_state["dfs"])
                 st.image("pic2.png",width=400)
                 form = st.form('Question')
@@ -988,7 +987,7 @@ if st.session_state['usercheck']==True:
                     "https://media-exp1.licdn.com/dms/image/C560BAQE17_4itIWOLw/company-logo_200_200/0/1570546904891?e=2147483647&v=beta&t=w-App-ZgjSHDlEDDFQeNB7XU2L7QgY2EF-vFj2Il8q8",
                     width=50,
                 )
-                st.title("Timesheet 📅")
+                st.markdown(f"## 🔒 :red[Privacy] :blue[Course **Questionnaire**.] 📚💻")
                 st.write(st.session_state["dfs"])
                 st.image("pic2.png",width=400)
                 if st.session_state['Q_n_emty']==1:
@@ -1007,7 +1006,7 @@ if st.session_state['usercheck']==True:
                     "https://media-exp1.licdn.com/dms/image/C560BAQE17_4itIWOLw/company-logo_200_200/0/1570546904891?e=2147483647&v=beta&t=w-App-ZgjSHDlEDDFQeNB7XU2L7QgY2EF-vFj2Il8q8",
                     width=50,
                 )
-                st.title("Timesheet 📅")
+                st.markdown(f"## 🔒 :red[Privacy] :blue[Course **Questionnaire**.] 📚💻")
                 st.write(st.session_state["dfs"])
                 st.image("pic2.png",width=400)
                 form = st.form('Question')
@@ -1033,7 +1032,7 @@ if st.session_state['usercheck']==True:
                     "https://media-exp1.licdn.com/dms/image/C560BAQE17_4itIWOLw/company-logo_200_200/0/1570546904891?e=2147483647&v=beta&t=w-App-ZgjSHDlEDDFQeNB7XU2L7QgY2EF-vFj2Il8q8",
                     width=50,
                 )
-                st.title("Timesheet 📅")
+                st.markdown(f"## 🔒 :red[Privacy] :blue[Course **Questionnaire**.] 📚💻")
                 st.write(st.session_state["dfs"])
                 st.image("pic2.png",width=400)
                 if st.session_state['Q_n_emty']==1:
@@ -1052,23 +1051,22 @@ if st.session_state['usercheck']==True:
                     "https://media-exp1.licdn.com/dms/image/C560BAQE17_4itIWOLw/company-logo_200_200/0/1570546904891?e=2147483647&v=beta&t=w-App-ZgjSHDlEDDFQeNB7XU2L7QgY2EF-vFj2Il8q8",
                     width=50,
                 )
-                st.title("Timesheet 📅")
-                st.write(st.session_state["dfs"])
-                st.image("pic2.png",width=400)
-                LS = st.slider('Quale la sua livello soddisfazione?', 0, 100)
-                st.button('Confirm',on_click=LiSo)
-        elif st.session_state['n']==12:
-            with log_c:
-                st.image(
-                    #"https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/floppy-disk_1f4be.png",
-                    "https://media-exp1.licdn.com/dms/image/C560BAQE17_4itIWOLw/company-logo_200_200/0/1570546904891?e=2147483647&v=beta&t=w-App-ZgjSHDlEDDFQeNB7XU2L7QgY2EF-vFj2Il8q8",
-                    width=50,
-                )
-                st.title("Timesheet 📅")
+                st.markdown(f"## 🔒 :red[Privacy] :blue[Course **Questionnaire**.] 📚💻")
                 st.write(st.session_state["dfs"])
                 st.image("pic2.png",width=400)
                 st.title('la sua esame è finito 😊.')
                 st.title("Grazie per la collaborazione! 😍")
+                with st.spinner('Attendere prego! evaluiamo lo stato della tua esame'):
+                    time.sleep(5)
+                st.session_state['error']=0
+                for i in ['q1','q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8', 'q9', 'q10']:
+                    if df[df['Username']==st.session_state["dfs"]['User'].iloc[0]][i].iloc[0]=='F':
+                        st.session_state['error']+=1
+                if st.session_state['error']<=3:
+                    st.success(f"##### Congrats, Ha superato!")
+                    st.balloons()
+                else:
+                    st.error(f"##### Riprova esame dopo un paio di giorni!")
                 st.session_state["st"]=False
     else:
         with log_c:
@@ -1077,7 +1075,7 @@ if st.session_state['usercheck']==True:
                 "https://media-exp1.licdn.com/dms/image/C560BAQE17_4itIWOLw/company-logo_200_200/0/1570546904891?e=2147483647&v=beta&t=w-App-ZgjSHDlEDDFQeNB7XU2L7QgY2EF-vFj2Il8q8",
                 width=50,
             )
-            st.title("Timesheet 📅")
+            st.markdown(f"## 🔒 :red[Privacy] :blue[Course **Questionnaire**.] 📚💻")
             st.write(st.session_state["dfs"])
             st.image("pic2.png",width=400)
             st.title('l\'esame gia registrato 😊.')
