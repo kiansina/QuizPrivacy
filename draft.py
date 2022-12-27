@@ -1063,7 +1063,7 @@ if st.session_state['usercheck']==True:
                     if df[df['Username']==st.session_state["dfs"]['User'].iloc[0]][i].iloc[0]=='F':
                         st.session_state['error']+=1
                 if st.session_state['error']<=3:
-                    st.success(f"##### Congrats, Ha superato!")
+                    st.success(f"##### Congrats, Hai superato!")
                     st.balloons()
                 else:
                     st.error(f"##### Riprova esame dopo un paio di giorni!")
