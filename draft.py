@@ -547,8 +547,8 @@ if st.session_state['n']==-1:
         st.write(st.session_state["dfs"])
         st.image("pic2.png",width=400)
         with var_c:
-            st.markdown(f"##### Benvenuto al Bordo Gentile :violet[**{st.session_state['username']}**] 🚀")#.format(st.session_state["username"]))
-            st.markdown(f"##### Controlla lo stato della sua esame per favore")
+            st.markdown(f"##### Benvenuto a Bordo Gentile :violet[**{st.session_state['username']}**] 🚀")#.format(st.session_state["username"]))
+            st.markdown(f"##### Controlla lo stato del tuo esame per favore")
             if st.button("check"):
                 if st.session_state["username"] in df['Username'].to_list():
                     st.session_state['usercheck']=False
@@ -559,8 +559,8 @@ if st.session_state['n']==-1:
                     st.session_state['usercheck']=False
                     st.write('Mi dispiace ma ha fallito! 😞 L\'esame non doveva essere interrotto!')
                 else:
-                    st.write('L\'esame è iniziato, ricorda che ha 5 minuti. Dopo 5 minuti ancora si può registerare l\'esame, pero non si può superare')
-                    st.write('prepara il suo tempo')
+                    st.write('L\'esame inizia ora, ricorda che hai 2 minuti per ogni domanda.)
+                    st.write('prepara il tuo tempo')
                     st.session_state['usercheck']=True
                     st.session_state['st']=True
                     st.session_state['n']=0
@@ -569,7 +569,7 @@ if st.session_state['n']==-1:
                     cursor = conn.cursor()
                     cursor.execute(sql)
                     with st.spinner('Wait for it...'):
-                        time.sleep(2)
+                        time.sleep(5)
                     st.experimental_rerun()
 
 if st.session_state['usercheck']==True:
