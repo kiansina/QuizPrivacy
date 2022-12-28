@@ -559,7 +559,7 @@ if st.session_state['n']==-1:
                     st.session_state['usercheck']=False
                     st.write('Mi dispiace ma ha fallito! 😞 L\'esame non doveva essere interrotto!')
                 else:
-                    st.write('L\'esame inizia ora, ricorda che hai 2 minuti per ogni domanda.)
+                    st.write('L\'esame inizia ora, ricorda che hai 2 minuti per ogni domanda.')
                     st.write('prepara il tuo tempo')
                     st.session_state['usercheck']=True
                     st.session_state['st']=True
