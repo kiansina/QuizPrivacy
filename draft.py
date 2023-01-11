@@ -341,7 +341,7 @@ var_c = var_e.container()
 if check_password():
     kos,st.session_state["username"]=check_password()
     DFST=get_data()
-    st.session_state["dfs"]=df_user[df_user['User']==st.session_state["username"]][df_user.columns[1:]]
+    st.session_state["dfs"]=df_user[df_user['User']==st.session_state["username"]][df_user.columns[1:-1]]
     if st.session_state['n']==-2:
         st.session_state['n']=-1
 
