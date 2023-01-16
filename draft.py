@@ -586,7 +586,7 @@ if st.session_state['usercheck']==True:
                 st.image("pic2.png",width=400)
                 st.session_state['Nome'] = st.text_input("Nome:")
                 st.session_state['Cognome'] = st.text_input("Cognome:")
-                st.info('Premi start da iniziare il tuo 1 ora')
+                st.info('Premi start per iniziare')
                 st.button('start',on_click=nnum)
                     #st.session_state['start']=not st.session_state['start']
                     #st.session_state['n']=1
