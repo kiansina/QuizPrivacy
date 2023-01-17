@@ -1062,7 +1062,7 @@ if st.session_state['usercheck']==True:
                 for i in ['q1','q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8', 'q9', 'q10']:
                     if df[df['Username']==st.session_state["dfs"]['User'].iloc[0]][i].iloc[0]=='F':
                         st.session_state['error']+=1
-                if st.session_state['error']<=3:
+                if st.session_state['error']<=2:
                     st.success(f"##### Congratulazioni, Hai superato l'esame!")
                     st.balloons()
                 else:
