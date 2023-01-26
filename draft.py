@@ -152,7 +152,7 @@ choices = {
 "18": [("Sanzioni amministrative pecuniarie fino a 20.000.000 di euro, o per le imprese, fino al 4 % del fatturato mondiale totale annuo dell'esercizio precedente","T"),
        ("Da 50.000 a 50.000.000 euro a seconda del tipo di violazione","F"),
        ("Sanzioni amministrative pecuniarie fino a 10.000.000 di euro, o per le imprese, fino al 2 % del fatturato mondiale totale annuo dell'esercizio precedente","F")],
-"19": [("Entrambe l'altre risposte","T"),
+"19": [("Entrambe le altre risposte","T"),
        ("In una violazione di sicurezza che comporta - accidentalmente o in modo illecito - la distruzione, la perdita, la modifica, la divulgazione non autorizzata o l’accesso ai dati personali trasmessi, conservati o comunque trattati","F"),
        ("In una divulgazione di dati riservati o confidenziali all’interno di un ambiente privo di misure di sicurezza (ad esempio, sul web) in maniera involontaria o volontaria. Tale divulgazione può avvenire in seguito a: perdita accidentale, furto, accesso abusivo","F")],
 "20": [("Solo da persone fisiche autorizzate che operano seguendo le istruzioni impartite dal Titolare o del Responsabile del Trattamento","T"),
@@ -547,8 +547,8 @@ if st.session_state['n']==-1:
         st.write(st.session_state["dfs"])
         st.image("pic2.png",width=400)
         with var_c:
-            st.markdown(f"##### Benvenuto a Bordo Gentile :violet[**{st.session_state['username']}**] 🚀")#.format(st.session_state["username"]))
-            st.markdown(f"##### Controlla lo stato del tuo esame per favore")
+            st.markdown(f"##### Gentile :violet[**{st.session_state['username']}**] 🚀")#.format(st.session_state["username"]))
+            st.markdown(f"##### Premi check per iniziare o per verificare l'esito del tuo esame") #Controlla lo stato del tuo esame per favore")
             if st.button("check"):
                 if st.session_state["username"] in df['Username'].to_list():
                     st.session_state['usercheck']=False
@@ -560,7 +560,7 @@ if st.session_state['n']==-1:
                     st.write('Mi dispiace ma ha fallito! 😞 L\'esame non doveva essere interrotto!')
                 else:
                     st.write('L\'esame inizia ora, ricorda che hai 2 minuti per ogni domanda.')
-                    st.write('prepara il tuo tempo')
+                    #st.write('prepara il tuo tempo')
                     st.session_state['usercheck']=True
                     st.session_state['st']=True
                     st.session_state['n']=0
@@ -632,7 +632,7 @@ if st.session_state['usercheck']==True:
                     st.warning('time up!! Leggi lo spiegazione')
                     st.info(explan[str(st.session_state["rn"][0])])
                 elif st.session_state["che0"][st.session_state["cho0"].index(st.session_state['Q_n'])]=='T':
-                    st.success('Bravo la risposta era corretta')
+                    st.success('Bene la risposta era corretta')
                 elif st.session_state["che0"][st.session_state["cho0"].index(st.session_state['Q_n'])]=='F':
                     st.error('Hai sbagliato. Leggi lo spiegazione per favore.')
                     st.info(explan[str(st.session_state["rn"][0])])
@@ -679,7 +679,7 @@ if st.session_state['usercheck']==True:
                     st.warning('time up!! Leggi lo spiegazione')
                     st.info(explan[str(st.session_state["rn"][1])])
                 elif st.session_state["che1"][st.session_state["cho1"].index(st.session_state['Q_n'])]=='T':
-                    st.success('Bravo la risposta era corretta')
+                    st.success('Bene la risposta era corretta')
                 elif st.session_state["che1"][st.session_state["cho1"].index(st.session_state['Q_n'])]=='F':
                     st.error('Hai sbagliato. Leggi lo spiegazione per favore.')
                     st.info(explan[str(st.session_state["rn"][1])])
@@ -724,7 +724,7 @@ if st.session_state['usercheck']==True:
                     st.warning('time up!! Leggi lo spiegazione')
                     st.info(explan[str(st.session_state["rn"][2])])
                 elif st.session_state["che2"][st.session_state["cho2"].index(st.session_state['Q_n'])]=='T':
-                    st.success('Bravo la risposta era corretta')
+                    st.success('Bene la risposta era corretta')
                 elif st.session_state["che2"][st.session_state["cho2"].index(st.session_state['Q_n'])]=='F':
                     st.error('Hai sbagliato. Leggi lo spiegazione per favore.')
                     st.info(explan[str(st.session_state["rn"][2])])
@@ -769,7 +769,7 @@ if st.session_state['usercheck']==True:
                     st.warning('time up!! Leggi lo spiegazione')
                     st.info(explan[str(st.session_state["rn"][3])])
                 elif st.session_state["che3"][st.session_state["cho3"].index(st.session_state['Q_n'])]=='T':
-                    st.success('Bravo la risposta era corretta')
+                    st.success('Bene la risposta era corretta')
                 elif st.session_state["che3"][st.session_state["cho3"].index(st.session_state['Q_n'])]=='F':
                     st.error('Hai sbagliato. Leggi lo spiegazione per favore.')
                     st.info(explan[str(st.session_state["rn"][3])])
@@ -814,7 +814,7 @@ if st.session_state['usercheck']==True:
                     st.warning('time up!! Leggi lo spiegazione')
                     st.info(explan[str(st.session_state["rn"][4])])
                 elif st.session_state["che4"][st.session_state["cho4"].index(st.session_state['Q_n'])]=='T':
-                    st.success('Bravo la risposta era corretta')
+                    st.success('Bene la risposta era corretta')
                 elif st.session_state["che4"][st.session_state["cho4"].index(st.session_state['Q_n'])]=='F':
                     st.error('Hai sbagliato. Leggi lo spiegazione per favore.')
                     st.info(explan[str(st.session_state["rn"][4])])
@@ -859,7 +859,7 @@ if st.session_state['usercheck']==True:
                     st.warning('time up!! Leggi lo spiegazione')
                     st.info(explan[str(st.session_state["rn"][5])])
                 elif st.session_state["che5"][st.session_state["cho5"].index(st.session_state['Q_n'])]=='T':
-                    st.success('Bravo la risposta era corretta')
+                    st.success('Bene la risposta era corretta')
                 elif st.session_state["che5"][st.session_state["cho5"].index(st.session_state['Q_n'])]=='F':
                     st.error('Hai sbagliato. Leggi lo spiegazione per favore.')
                     st.info(explan[str(st.session_state["rn"][5])])
@@ -904,7 +904,7 @@ if st.session_state['usercheck']==True:
                     st.warning('time up!! Leggi lo spiegazione')
                     st.info(explan[str(st.session_state["rn"][6])])
                 elif st.session_state["che6"][st.session_state["cho6"].index(st.session_state['Q_n'])]=='T':
-                    st.success('Bravo la risposta era corretta')
+                    st.success('Bene la risposta era corretta')
                 elif st.session_state["che6"][st.session_state["cho6"].index(st.session_state['Q_n'])]=='F':
                     st.error('Hai sbagliato. Leggi lo spiegazione per favore.')
                     st.info(explan[str(st.session_state["rn"][6])])
@@ -949,7 +949,7 @@ if st.session_state['usercheck']==True:
                     st.warning('time up!! Leggi lo spiegazione')
                     st.info(explan[str(st.session_state["rn"][7])])
                 elif st.session_state["che7"][st.session_state["cho7"].index(st.session_state['Q_n'])]=='T':
-                    st.success('Bravo la risposta era corretta')
+                    st.success('Bene la risposta era corretta')
                 elif st.session_state["che7"][st.session_state["cho7"].index(st.session_state['Q_n'])]=='F':
                     st.error('Hai sbagliato. Leggi lo spiegazione per favore.')
                     st.info(explan[str(st.session_state["rn"][7])])
@@ -994,7 +994,7 @@ if st.session_state['usercheck']==True:
                     st.warning('time up!! Leggi lo spiegazione')
                     st.info(explan[str(st.session_state["rn"][8])])
                 elif st.session_state["che8"][st.session_state["cho8"].index(st.session_state['Q_n'])]=='T':
-                    st.success('Bravo la risposta era corretta')
+                    st.success('Bene la risposta era corretta')
                 elif st.session_state["che8"][st.session_state["cho8"].index(st.session_state['Q_n'])]=='F':
                     st.error('Hai sbagliato. Leggi lo spiegazione per favore.')
                     st.info(explan[str(st.session_state["rn"][8])])
@@ -1039,7 +1039,7 @@ if st.session_state['usercheck']==True:
                     st.warning('time up!! Leggi lo spiegazione')
                     st.info(explan[str(st.session_state["rn"][9])])
                 elif st.session_state["che9"][st.session_state["cho9"].index(st.session_state['Q_n'])]=='T':
-                    st.success('Bravo la risposta era corretta')
+                    st.success('Bene la risposta era corretta')
                 elif st.session_state["che9"][st.session_state["cho9"].index(st.session_state['Q_n'])]=='F':
                     st.error('Hai sbagliato. Leggi lo spiegazione per favore.')
                     st.info(explan[str(st.session_state["rn"][9])])
@@ -1054,7 +1054,7 @@ if st.session_state['usercheck']==True:
                 st.markdown(f"## 🔒 :red[Privacy] :blue[Course **Questionnaire**.] 📚💻")
                 st.write(st.session_state["dfs"])
                 st.image("pic2.png",width=400)
-                st.title('la sua esame è finito 😊.')
+                st.title('il tuo esame è finito 😊.')
                 st.title("Grazie per la collaborazione! 😍")
                 with st.spinner('Attendere prego! evaluiamo lo stato della tua esame'):
                     time.sleep(5)
