@@ -552,9 +552,9 @@ if st.session_state['n']==-1:
             if st.button("check"):
                 if st.session_state["username"] in df['Username'].to_list():
                     st.session_state['usercheck']=False
-                    st.write('l\'esame gia registrato 😊.')
+                    st.write('L\'esame risulta già effettuato 😊.')
                 elif st.session_state["username"] not in st.secrets['passwords'].keys():
-                    st.write('😕 User not known')
+                    st.write('😕 Utente non riconosciuto')
                 elif st.session_state["username"] in ds['User_In'].to_list():
                     st.session_state['usercheck']=False
                     st.write('Mi dispiace ma ha fallito! 😞 L\'esame non doveva essere interrotto!')
@@ -634,7 +634,7 @@ if st.session_state['usercheck']==True:
                 elif st.session_state["che0"][st.session_state["cho0"].index(st.session_state['Q_n'])]=='T':
                     st.success('Bene la risposta era corretta')
                 elif st.session_state["che0"][st.session_state["cho0"].index(st.session_state['Q_n'])]=='F':
-                    st.error('Hai sbagliato. Leggi lo spiegazione per favore.')
+                    st.error('La risposta non è corretta, leggi la spiegazione per favore.')
                     st.info(explan[str(st.session_state["rn"][0])])
                 st.button('next',on_click=cnf,args=([1]))
         elif (st.session_state['n']==2) and (st.session_state['con']==0):
@@ -681,7 +681,7 @@ if st.session_state['usercheck']==True:
                 elif st.session_state["che1"][st.session_state["cho1"].index(st.session_state['Q_n'])]=='T':
                     st.success('Bene la risposta era corretta')
                 elif st.session_state["che1"][st.session_state["cho1"].index(st.session_state['Q_n'])]=='F':
-                    st.error('Hai sbagliato. Leggi lo spiegazione per favore.')
+                    st.error('La risposta non è corretta, leggi la spiegazione per favore.')
                     st.info(explan[str(st.session_state["rn"][1])])
                 st.button('next',on_click=cnf,args=([2]))
         elif (st.session_state['n']==3) and (st.session_state['con']==0):
@@ -726,7 +726,7 @@ if st.session_state['usercheck']==True:
                 elif st.session_state["che2"][st.session_state["cho2"].index(st.session_state['Q_n'])]=='T':
                     st.success('Bene la risposta era corretta')
                 elif st.session_state["che2"][st.session_state["cho2"].index(st.session_state['Q_n'])]=='F':
-                    st.error('Hai sbagliato. Leggi lo spiegazione per favore.')
+                    st.error('La risposta non è corretta, leggi la spiegazione per favore.')
                     st.info(explan[str(st.session_state["rn"][2])])
                 st.button('next',on_click=cnf,args=([3]))
         elif (st.session_state['n']==4) and (st.session_state['con']==0):
@@ -771,7 +771,7 @@ if st.session_state['usercheck']==True:
                 elif st.session_state["che3"][st.session_state["cho3"].index(st.session_state['Q_n'])]=='T':
                     st.success('Bene la risposta era corretta')
                 elif st.session_state["che3"][st.session_state["cho3"].index(st.session_state['Q_n'])]=='F':
-                    st.error('Hai sbagliato. Leggi lo spiegazione per favore.')
+                    st.error('La risposta non è corretta, leggi la spiegazione per favore.')
                     st.info(explan[str(st.session_state["rn"][3])])
                 st.button('next',on_click=cnf,args=([4]))
         elif (st.session_state['n']==5) and (st.session_state['con']==0):
@@ -816,7 +816,7 @@ if st.session_state['usercheck']==True:
                 elif st.session_state["che4"][st.session_state["cho4"].index(st.session_state['Q_n'])]=='T':
                     st.success('Bene la risposta era corretta')
                 elif st.session_state["che4"][st.session_state["cho4"].index(st.session_state['Q_n'])]=='F':
-                    st.error('Hai sbagliato. Leggi lo spiegazione per favore.')
+                    st.error('La risposta non è corretta, leggi la spiegazione per favore.')
                     st.info(explan[str(st.session_state["rn"][4])])
                 st.button('next',on_click=cnf,args=([5]))
         elif (st.session_state['n']==6) and (st.session_state['con']==0):
@@ -861,7 +861,7 @@ if st.session_state['usercheck']==True:
                 elif st.session_state["che5"][st.session_state["cho5"].index(st.session_state['Q_n'])]=='T':
                     st.success('Bene la risposta era corretta')
                 elif st.session_state["che5"][st.session_state["cho5"].index(st.session_state['Q_n'])]=='F':
-                    st.error('Hai sbagliato. Leggi lo spiegazione per favore.')
+                    st.error('La risposta non è corretta, leggi la spiegazione per favore.')
                     st.info(explan[str(st.session_state["rn"][5])])
                 st.button('next',on_click=cnf,args=([6]))
         elif (st.session_state['n']==7) and (st.session_state['con']==0):
@@ -906,7 +906,7 @@ if st.session_state['usercheck']==True:
                 elif st.session_state["che6"][st.session_state["cho6"].index(st.session_state['Q_n'])]=='T':
                     st.success('Bene la risposta era corretta')
                 elif st.session_state["che6"][st.session_state["cho6"].index(st.session_state['Q_n'])]=='F':
-                    st.error('Hai sbagliato. Leggi lo spiegazione per favore.')
+                    st.error('La risposta non è corretta, leggi la spiegazione per favore.')
                     st.info(explan[str(st.session_state["rn"][6])])
                 st.button('next',on_click=cnf,args=([7]))
         elif (st.session_state['n']==8) and (st.session_state['con']==0):
@@ -951,7 +951,7 @@ if st.session_state['usercheck']==True:
                 elif st.session_state["che7"][st.session_state["cho7"].index(st.session_state['Q_n'])]=='T':
                     st.success('Bene la risposta era corretta')
                 elif st.session_state["che7"][st.session_state["cho7"].index(st.session_state['Q_n'])]=='F':
-                    st.error('Hai sbagliato. Leggi lo spiegazione per favore.')
+                    st.error('La risposta non è corretta, leggi la spiegazione per favore.')
                     st.info(explan[str(st.session_state["rn"][7])])
                 st.button('next',on_click=cnf,args=([8]))
         elif (st.session_state['n']==9) and (st.session_state['con']==0):
@@ -996,7 +996,7 @@ if st.session_state['usercheck']==True:
                 elif st.session_state["che8"][st.session_state["cho8"].index(st.session_state['Q_n'])]=='T':
                     st.success('Bene la risposta era corretta')
                 elif st.session_state["che8"][st.session_state["cho8"].index(st.session_state['Q_n'])]=='F':
-                    st.error('Hai sbagliato. Leggi lo spiegazione per favore.')
+                    st.error('La risposta non è corretta, leggi la spiegazione per favore.')
                     st.info(explan[str(st.session_state["rn"][8])])
                 st.button('next',on_click=cnf,args=([9]))
         elif (st.session_state['n']==10) and (st.session_state['con']==0):
@@ -1041,7 +1041,7 @@ if st.session_state['usercheck']==True:
                 elif st.session_state["che9"][st.session_state["cho9"].index(st.session_state['Q_n'])]=='T':
                     st.success('Bene la risposta era corretta')
                 elif st.session_state["che9"][st.session_state["cho9"].index(st.session_state['Q_n'])]=='F':
-                    st.error('Hai sbagliato. Leggi lo spiegazione per favore.')
+                    st.error('La risposta non è corretta, leggi la spiegazione per favore.')
                     st.info(explan[str(st.session_state["rn"][9])])
                 st.button('next',on_click=cnf,args=([10]))
         elif st.session_state['n']==11:
