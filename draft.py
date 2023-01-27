@@ -1056,17 +1056,17 @@ if st.session_state['usercheck']==True:
                 st.image("pic2.png",width=400)
                 st.title('il tuo esame è finito 😊.')
                 st.title("Grazie per la collaborazione! 😍")
-                with st.spinner('Attendere prego! evaluiamo lo stato della tua esame'):
+                with st.spinner('Attendere prego. Stiamo verificando l\'esito del tuo esame'):
                     time.sleep(5)
                 st.session_state['error']=0
                 for i in ['q1','q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8', 'q9', 'q10']:
                     if df[df['Username']==st.session_state["dfs"]['User'].iloc[0]][i].iloc[0]=='F':
                         st.session_state['error']+=1
                 if st.session_state['error']<=2:
-                    st.success(f"##### Congratulazioni, Hai superato l'esame!")
+                    st.success(f"##### Congratulazioni, hai superato l'esame!")
                     st.balloons()
                 else:
-                    st.error(f"##### L'esito è negativo. Riprova esame dopo un paio di giorni!")
+                    st.error(f"##### Mi dispiace, non hai superato l'esame. Potrai ripeterlo tra due giorni!")
                 st.session_state["st"]=False
     else:
         with log_c:
@@ -1078,4 +1078,4 @@ if st.session_state['usercheck']==True:
             st.markdown(f"## 🔒 :red[Privacy] :blue[Course **Questionnaire**.] 📚💻")
             st.write(st.session_state["dfs"])
             st.image("pic2.png",width=400)
-            st.title('l\'esame gia registrato 😊.')
+            st.title('L\'esame risulta già effettuato 😊.')
