@@ -557,7 +557,7 @@ if st.session_state['n']==-1:
                     st.write('😕 Utente non riconosciuto')
                 elif st.session_state["username"] in ds['User_In'].to_list():
                     st.session_state['usercheck']=False
-                    st.write('Mi dispiace ma ha fallito! 😞 L\'esame non doveva essere interrotto!')
+                    st.write('Hai interrotto la sessione, non è quindi possibile recuperare quanto svolto. 😞 Potrai ripeterlo tra due giorni! ')
                 else:
                     st.write('L\'esame inizia ora, ricorda che hai 2 minuti per ogni domanda.')
                     #st.write('prepara il tuo tempo')
