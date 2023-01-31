@@ -345,7 +345,8 @@ if check_password():
     if st.session_state['n']==-2:
         st.session_state['n']=-1
 
-
+st.write(st.session_state["dfs"]) #deletex
+st.write(df_user) #deletex
 
 def nnum():
     st.session_state['n']+=1
