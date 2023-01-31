@@ -348,6 +348,10 @@ if check_password():
 st.write(st.session_state["dfs"]) #deletex
 st.write(df_user) #deletex
 st.write(st.session_state["username"]) #deletex
+st.write(df_user['User'].loc[158]) #deletex
+st.write(st.session_state["username"])==st.write(df_user['User'].loc[158]) #deletex
+
+
 
 def nnum():
     st.session_state['n']+=1
